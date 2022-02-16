@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
 
-function App() {
+import NavBar from './components/navBar';
+import Footer from './components/footer';
+import Movie from './pages/movie';
+import Results from './pages/results';
+
+import MoviePopular from './admin/movies/containers/MoviePopular';
+import SearchMovie from './admin/movies/containers/SearchMovie';
+
+import SeeByCategory from './admin/shared/containers/SeeByCategory';
+import IndexMovie from './admin/indexMovie';
+import NavBav from './admin/navBar';
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          {/* -> :name parametro url */}
+          <Route path="/:category/:id" element={<Movie/>}/>
+          {/* <Route path="*" element={<NotFound/>} /> */}
+          
+          {/* 
+          * Busqueda con name y category solo si selecciona un tab*
+          <Route path="/search/:category/:name" element={<Results/>}/>
+
+          <Route path="/search/:category/:filter" element={<Results/>}/>
+          * Busqueda si no se a seleccionado un tab 
+          <Route path="/search/:name" element={<Results/>}/> */}
+
+
+          {/* Para poder ver la pagina de busquedas */}
+          <Route path="/admin" element={<NavBav/>}/>
+
+        </Routes>
+        {/* <Footer/> */}
+      </Router>
+    </>
   );
 }
 

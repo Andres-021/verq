@@ -1,0 +1,27 @@
+/* Modificacion de colores y detalles de un link */
+.color-link{
+  color: white;
+  text-decoration: none;
+}
+
+.color-link:hover{
+  color: rgb(34, 32, 32);
+}
+/* Fin */
+
+/* Para el desbordamiento de letras en divs. */
+.text-desbording-vertical{
+  overflow: hidden;
+  font-size: smaller;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+/* Fin */
+
+/* Tamaño del div al cargar componentes */
+.loading-size-container{
+  padding-top: 15%;
+  padding-bottom: 20%;
+}
+

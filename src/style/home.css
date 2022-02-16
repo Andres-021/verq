@@ -1,0 +1,19 @@
+.container-scroll{
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.container-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.container-scroll::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.container-scroll::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 10px;
+  border: 2px solid #f1f2f3;
+}
+
