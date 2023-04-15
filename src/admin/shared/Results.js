@@ -4,12 +4,14 @@ import { useParams, Navigate, Link  } from 'react-router-dom';
 
 import OverlayBootstrap from './components/overlay';
 import AlerMui from './components/alertMui';
+import '../../style/results.css';
 
 const Results = (props) => {
 
   return(
-    <Col>
-      <Row xs={2} sm='auto' md={4} lg={6}>
+
+    <>
+      <div className='div-results'>
         {
           props.results.length || props.results !== undefined?
           props.results.map((element, index) => (
@@ -22,8 +24,8 @@ const Results = (props) => {
               <AlerMui severity={'info'} text={'No se encontraron resultados.'}/>
             </Col>
         }
-      </Row>
-    </Col>
+      </div>
+    </>
   );
 }
 
