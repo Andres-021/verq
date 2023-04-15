@@ -134,12 +134,12 @@ export default function NavBar(props) {
   // Lista de objetos.
   const listItem = [
     {item : <SearchOutlinedIcon/>, name: 'Busqueda'},
-    {item: <LibraryAddCheckOutlinedIcon/>, name: 'Agregado'}
+    // {item: <LibraryAddCheckOutlinedIcon/>, name: 'Agregado'}
   ];
 
-  const listItemAdmin = [
-    {item: <PersonAddOutlinedIcon />, name: 'Registrar'}
-  ];
+  // const listItemAdmin = [
+  //   {item: <PersonAddOutlinedIcon />, name: 'Registrar'}
+  // ];
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -153,7 +153,7 @@ export default function NavBar(props) {
           </Toolbar>
         </AppBar>
       </HideOnScroll>
-      <Drawer
+      {/* <Drawer
         variant="permanent"
         sx={{
           width: drawerWidth,
@@ -210,7 +210,7 @@ export default function NavBar(props) {
 
           </List>
         </Box>
-      </Drawer>
+      </Drawer> */}
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         {

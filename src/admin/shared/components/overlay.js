@@ -26,7 +26,7 @@ const OverlayBootstrap = (props) => {
     // Luego capturamos el namey category de la peli para realizar el filtrado.
     const {category, id} = params;
 
-    navigate("/"+category+"/"+ props.pelis.id, {category: category, id: props.pelis.id});
+    navigate("/"+ props.category+"/"+ props.pelis.id, {category: props.category, id: props.pelis.id});
   }
 
   useEffect(() => {

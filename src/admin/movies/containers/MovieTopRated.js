@@ -44,7 +44,7 @@ const MovieTopRated = (props) => {
         :
         <Row>
           <ResultsInfo isLoading={isLoading} page={page} pageLeng={topRated.length} results={totalTopRated}/>
-          <Results results={topRated}/>
+          <Results cat={'movie'} results={topRated}/>
           <Pagination page={page} count={totalPage} onChange={handlePage}/>
         </Row>
       }

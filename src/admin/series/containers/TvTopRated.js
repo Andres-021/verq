@@ -44,7 +44,7 @@ const TvTopRated = (props) => {
         :
         <Row>
           <ResultsInfo isLoading={isLoading} page={page} pageLeng={topRated.length} results={totalTopRated}/>
-          <Results results={topRated}/>
+          <Results cat={'tv'} results={topRated}/>
           <Pagination page={page} count={totalPage} onChange={handlePage}/>
         </Row>
       }

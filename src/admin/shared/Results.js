@@ -14,7 +14,7 @@ const Results = (props) => {
           props.results.length || props.results !== undefined?
           props.results.map((element, index) => (
             <Col className='mb-3' key={index}>
-              <OverlayBootstrap cateory={props.cat} pelis={element}/>
+              <OverlayBootstrap category={props.cat} pelis={element}/>
             </Col>
           ))
           :  

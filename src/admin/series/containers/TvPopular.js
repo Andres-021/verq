@@ -43,7 +43,7 @@ const TvPopular = () => {
         :
         <Row>
           <ResultsInfo isLoading={isLoading} pageLeng={popular.length} results={totalPopular}/>
-          <Results results={popular}/>
+          <Results cat={'tv'} results={popular}/>
           <Pagination page={page} count={totalPage} onChange={handlePage}/>
         </Row>
       }

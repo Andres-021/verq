@@ -38,7 +38,7 @@ const SearchMovie  = (props) => {
         :
         <Row>
           <ResultsInfo isLoading={isLoading} page={page} pageLeng={results.length} results={totalResults}/>
-          <Results results={results}/>
+          <Results cat={'movie'} results={results}/>
           <Pagination page={page} count={totalPage} onChange={handlePage}/>
         </Row>
       }

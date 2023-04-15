@@ -43,7 +43,7 @@ const MovieLatest = (props) => {
         :
         <Row>
           <ResultsInfo isLoading={isLoading} page={page} pageLeng={latest.length} results={totalLatest}/>
-          <Results results={latest}/>
+          <Results cat={'movie'} results={latest}/>
           <Pagination page={page} count={totalPage} onChange={handlePage}/>
         </Row>
       }

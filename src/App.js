@@ -31,7 +31,7 @@ const App = (props) => {
 
 
           {/* Para poder ver la pagina de busquedas */}
-          <Route path="/admin" element={<NavBav/>}/>
+          <Route path="/" element={<NavBav/>}/>
 
         </Routes>
         {/* <Footer/> */}
