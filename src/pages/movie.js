@@ -2,7 +2,8 @@ import {Container, Row, Col, Figure, Badge, Anchor, Spinner} from 'react-bootstr
 import { useParams, Navigate, Link  } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import '../style/global.css';
+// import '../style/global.css';
+import '../style/details.css'
 
 import api from '../config/api';
 
@@ -13,6 +14,13 @@ const Movie = () => {
 
   // Obtenemos parametro :name de la url
   const params = useParams()
+
+  const backdropImg = (res) => {
+    var img = document.getElementById('banner');
+    img.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${"https://image.tmdb.org/t/p/original"+ res.backdrop_path})`;
+    img.style.backgroundPosition = 'center';
+    img.style.backgroundSize = 'cover';
+  }
   
   const search_details = (category, page) => {
 
@@ -21,6 +29,8 @@ const Movie = () => {
 
       api.movie.getDetailsMovies(page).then((res) => {
         setWatch(res);
+        backdropImg(res);
+
         setLoading(false);
       });
     }
@@ -30,7 +40,8 @@ const Movie = () => {
 
       api.tv.getDetailsTVs(page).then((res) => {
         setWatch(res);
-        console.log(res)
+        backdropImg(res);
+        
         setLoading(false);
       })
     }
@@ -39,86 +50,48 @@ const Movie = () => {
   useEffect(() => {
     // Luego capturamos el name y category de la peli para realizar el filtrado.
     const {category, id} = params;
-    
     search_details(category, id);
     setLoading(false);
+
   },[loading]);
 
   return(
     <>
-      { 
+      {
         loading?
-        <Container>
-          <Row className="mt-5">
-          </Row>
-          <Row className="mt-3 mb-5 justify-content-center loading-size-container">
-            <Col md="auto">
-              <Spinner animation="border" />
-            </Col>
-          </Row>
-        </Container>
+          <Container>
+            <Row className="mt-5">
+            </Row>
+            <Row className="mt-3 mb-5 justify-content-center loading-size-container">
+              <Col md="auto">
+                <Spinner animation="border" />
+              </Col>
+            </Row>
+          </Container>
         :
-        <Container className="" src={"https://image.tmdb.org/t/p/original"+watch.backdrop_path}>
-          <Row className="mt-5">
-            <Col xs={6} md={4}>
-              <Figure>
-                <Figure.Image
-                  width={271}
-                  height={280}
-                  alt={''}
-                  src={"https://image.tmdb.org/t/p/original"+watch.poster_path}
-                />
-                <Figure.Caption>
-                  Nulla vitae elit libero, a pharetra augue
-                </Figure.Caption>
-              </Figure>
-            </Col>
-            <Col xs={12} md={8}>
-              <Row>
-                  <Col sm="auto">
-                    <h1>{watch.title || watch.name}</h1>
-                  </Col>
-                  <Col>
-                    <Badge pill bg="warning">
-                      <strong>
-                        <Anchor>
-                          <Link to='/year' className="color-link">{'year'}</Link>
-                        </Anchor>
-                      </strong>
-                    </Badge>
-                  </Col>
-              </Row>
-              <Row>
-                <Col sm="auto">
-                  <Badge pill bg="primary">
-                    <strong>
-                    <Anchor >{'category'}</Anchor>
-                    </strong>
-                  </Badge>
-                </Col>
-                <Col sm="auto">
-                </Col>
-                <Col>
-                  {
-                    genre.length?
-                    genre.map((watch) => (
-                      <Badge pill bg="info">
-                        <Anchor href={"/genre/"+ watch.name} className="color-link">{watch.name}</Anchor>
-                      </Badge>
-                    ))
-                    : null
-                  }
-                </Col>
-              </Row>
-              <Row className="mt-4">
-                <h5>Sinopsis</h5>
-              </Row>
-              <Row className="mt-2">
-                <p>{watch.overview}</p>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
+        <div className="banner" id="banner">
+          {/* <img src={"https://image.tmdb.org/t/p/original"+ watch.backdrop_path}/> */}
+          <div className="poster">
+            <img src={"https://image.tmdb.org/t/p/w500/"+ watch.poster_path}/>
+          </div>
+          <div className="content">
+            <h2>{watch.title || watch.name}</h2>
+            <ul className="details-content">
+              {
+                genre.length?
+                genre.map((watch) => (
+                  <li>{"/genre/"+ watch.name}</li>
+                ))
+                : null
+              }
+            </ul>
+            <h5>Resumen</h5>
+            <p>{watch.overview}</p>
+            
+            {/* <!-- <a href="#" className="play"><img> Ver trailer</a> --> */}
+          </div>
+          <div className="slide"></div>
+        </div>
       }
     </>
   );

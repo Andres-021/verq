@@ -38,6 +38,9 @@ const OverlayBootstrap = (props) => {
   },[props.pelis.poster_path]);
 
   return(
+
+    
+
     <OverlayTrigger
       placement="auto"
       className='Overlay'

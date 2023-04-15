@@ -1,0 +1,156 @@
+
+.banner{
+  position: relative;
+  min-height: 100vh;
+  padding: 0 100px 20px;
+  /* margin: 20px; */
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+/* .banner img{
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+} */
+/* Inicio poster details */
+
+.banner .poster{
+  margin-right: 20px;
+  width: 250px;
+  height: 300px;
+  box-shadow: 0px 5px 25px rgb(54, 54, 54);
+}
+
+.banner .poster img{
+  max-width: 100%;
+  height: 300px;
+  border-radius: 4px;
+}
+/* Fin poster details */
+
+.banner .content{
+  width: 100%;
+  min-height: 300px;
+}
+
+/* Inicio genres */
+.banner .content .details-content{
+  position: relative;
+  flex-direction: row;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0;
+  font-size: 0.7em;;
+}
+
+.banner .content .details-content li{
+  background-color: var(--hovercolor);
+  padding: 2px;
+  margin-right: 10px;
+  border-radius: 4px;
+  font-weight: 550;
+}
+/* Fin genres */
+
+/* Inicio texto */
+.banner .content h2{
+  margin-top: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.banner .content h5{
+  /* margin-top: 80px; */
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.banner .content p{
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5em;
+  color: #fff;
+  margin: 15px 0 35px;
+  /* Evitar desbordamiento de texto */
+  overflow: hidden;
+  white-space: nowrap;
+  white-space: initial;
+}
+
+/* Fin texto */
+
+.play{
+  position: relative;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 1.2em;
+}
+
+.play img{
+  margin-right: 10px;
+  max-width: 50px;
+}
+
+.play:hover{
+  color: rgb(197, 195, 195);
+}
+
+.sci{
+  position: absolute;
+  top: 15%;
+  transform: translate(-50%);
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sci li{
+  list-style: none;
+}
+
+.sci li a{
+  text-decoration: none;
+}
+
+.sci li a img{
+  filter: invert(1);
+  transform: scale(0.6);
+}
+
+.slide{
+  position: absolute;
+  bottom: 50px;
+  left: calc()
+}
+
+
+/* Inicio card authors */
+
+.content-video{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 300px;
+}
